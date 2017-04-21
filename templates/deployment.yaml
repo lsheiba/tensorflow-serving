@@ -18,7 +18,7 @@ spec:
         chart: {{ .Chart.Name }}
     spec:
       containers:
-      - name: fast-neural-style
+      - name: tensorboard
         resources:
           requests:
             cpu: "{{ .Values.cpu.requests }}"
@@ -29,7 +29,7 @@ spec:
         image: "{{ printf "%s:%s" .Values.image.Name .Values.image.Tag }}"
         ports:
         - containerPort: 6006
-          name: tensor-board 
+          name: tensorboard 
         volumeMounts:
         - name: notebooks
           mountPath: "/notebooks/{{ .Values.logdir }}"
