@@ -19,6 +19,8 @@ spec:
     spec:
       containers:
       - name: tensorboard
+        command: ["tensorboard"]
+        args: ["--logdir={{ .Values.logdir }}" 
         resources:
           requests:
             cpu: "{{ .Values.cpu.requests }}"
