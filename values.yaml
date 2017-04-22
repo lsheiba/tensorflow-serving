@@ -17,4 +17,4 @@ persistence:
       path: "/kuberlab"
     accessMode: ReadWriteMany
     size: 16Gi
-    logdir: "/notebooks/logs"
+    logdir: "/notebooks/log_dir"
