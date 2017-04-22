@@ -1,7 +1,7 @@
 name: tensorboard
 home: https://github.com/lsheiba/tensorboard.git
 version: 1.0.0
-description: Tensorflow + Jupiter no authentication
+description: Tensorboard
 sources:
   - https://github.com/lsheiba/tensorboard.git
 maintainers:
