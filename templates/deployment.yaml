@@ -34,7 +34,7 @@ spec:
           name: tensorboard 
         volumeMounts:
         - name: notebooks
-          mountPath: "{{ .Values.logdir }}"
+          mountPath: "{{ .Values.persistence.logdir }}"
       volumes:
         - name: notebooks
           {{- if .Values.persistence.enabled }}
