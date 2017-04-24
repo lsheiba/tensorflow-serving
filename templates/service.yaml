@@ -11,9 +11,9 @@ metadata:
 spec:
   type: {{ .Values.serviceType }}
   ports:
-    - port: 6006
-      name: tensorboard
-      targetPort: 6006
+    - port: 9000
+      name: tensorflow-serving
+      targetPort: 9000
   selector:
     release: {{.Release.Name | quote }}
     chart: "{{.Chart.Name}}"
