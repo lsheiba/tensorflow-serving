@@ -7,7 +7,7 @@ memory:
   limits: "16Gi"
 serviceType: ClusterIP
 image:
-  Name: lsheiba/tensorboard
+  Name: lsheiba/tensorflow-serving-ls-devel
   Tag: latest
 persistence:
     enabled: true
@@ -17,4 +17,4 @@ persistence:
       path: "/kuberlab"
     accessMode: ReadWriteMany
     size: 16Gi
-    logdir: "/notebooks/log_dir"
+    logdir: "/notebooks/model_dir"
