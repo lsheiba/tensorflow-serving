@@ -1,5 +1,5 @@
-# tensorboard
+# tensorflow-serving
 
-Tensorboard will look for event logs into directory specified in Values
+Serve tensorflow model from nfs share
 
-Tensorboard --log_dir=...
+tensorflow-serving --model=name --model-dir=dir
