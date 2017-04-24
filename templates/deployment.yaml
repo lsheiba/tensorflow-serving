@@ -18,9 +18,9 @@ spec:
         chart: {{ .Chart.Name }}
     spec:
       containers:
-      - name: tensorboard
-        command: ["tensorboard"]
-        args: ["--logdir","{{ .Values.persistence.logdir }}"]
+      - name: tensorflow-serving
+        command: ["tensorflow_model_server"]
+        args: ["--mode_name","{{ .Values.persistence.model_name }}","--model_path","{{ .Values.persistence.model_path }}]"
         resources:
           requests:
             cpu: "{{ .Values.cpu.requests }}"
@@ -30,11 +30,11 @@ spec:
             memory: "{{ .Values.memory.limits }}"
         image: "{{ printf "%s:%s" .Values.image.Name .Values.image.Tag }}"
         ports:
-        - containerPort: 6006
-          name: tensorboard 
+        - containerPort: 9000
+          name: tensorfolw-serving 
         volumeMounts:
         - name: notebooks
-          mountPath: "{{ .Values.persistence.logdir }}"
+          mountPath: "{{ .Values.persistence.model_dir }}"
       volumes:
         - name: notebooks
           {{- if .Values.persistence.enabled }}
